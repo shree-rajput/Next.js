@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 async function getUsers(){
     let data = await fetch("http://localhost:3000/api/users");
     data = await data.json();
@@ -14,7 +16,9 @@ export default async function Page(){
             {
                 data.map((user,id) => {
                   return   <div key={id}>
-                    {user.name}
+                    
+                    <Link href={`users/${item.id}`}>{user.name}</Link>
+                    <span><Link href={`users/${item.id}/update`}>Edit</Link></span>
                     </div>
                 })
             }

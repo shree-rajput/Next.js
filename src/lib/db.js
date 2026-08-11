@@ -1,0 +1,1 @@
+export const connectionSrt = "mongodb+srv://<username>:<password>@cluster0.4xj6q.mongodb.net/<dbname>?retryWrites=true&w=majority"
