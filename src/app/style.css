@@ -1,0 +1,21 @@
+.input{
+    height : 35px;
+    width : 300px;
+    display : block;
+    margin-bottom : 20px;
+    padding-left : 10px;
+}
+
+.btn{
+    background-color : rgb(124, 124, 255);
+    border-radius : 15px;
+    color : white;
+    height : 30px;
+    width : 100px;
+    border : none;
+}
+
+.btn:hover{
+    background-color : rgb(79, 79, 234);
+
+}
