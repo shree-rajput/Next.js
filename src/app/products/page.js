@@ -1,5 +1,9 @@
+import DeleteProduct from "@/lib/DeleteProduct";
+
 const getProduct = async () => {
-  let data = await fetch("http://localhost:3000/api/products");
+  let data = await fetch("http://localhost:3000/api/products", {
+    cache: "no-cache",
+  });
   data = await data.json();
   if (data.success) {
     return data.result;
@@ -33,6 +37,9 @@ export default async function Page() {
               <td>{item.company}</td>
               <td>
                 <Link href={"products/" + item._id}>Edit</Link>
+              </td>
+              <td>
+                <DeleteProduct id={item._id} />
               </td>
             </tr>
           ))}

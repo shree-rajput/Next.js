@@ -20,3 +20,14 @@ export async function GET(request, content) {
   const result = await Product.findById(filter);
   return NextResponse.json();
 }
+
+export async function DELETE(request, content) {
+  const productId = content.params.productid;
+  const filter = { _id: productId };
+  await mongoose.connect(connectionSrt);
+  const result = await Product.findByIdAndDelete(filter);
+  return NextResponse.json({
+    deleted: true,
+    message: "Product deleted successfully",
+  });
+}
